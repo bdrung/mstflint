@@ -42,12 +42,12 @@ MLXREG_DIR = $(top_srcdir)/mlxreg
 
 AM_CFLAGS = -Wall -W -g -MP -MD -pipe -Werror $(COMPILER_FPIC) -DDATA_PATH=\"$(pkgdatadir)\"
 
-lib_LTLIBRARIES = libprint_util_lib.a
+lib_LTLIBRARIES = libprint_util_lib.la
 
-libprint_util_lib_a_SOURCES = mlxlink_cmd_print.h \
+libprint_util_lib_la_SOURCES = mlxlink_cmd_print.h \
                             mlxlink_cmd_print.cpp \
                             mlxlink_record.h \
                             mlxlink_record.cpp
-libprint_util_lib_a_CXXFLAGS = -I. -I$(USER_DIR) -I$(MTCR_DIR) -I$(MFT_EXT_LIBS_INC_DIR) -I$(UTILS_DIR) -I$(MLXREG_DIR) -I$(MTCR_INC_DIR) $(JSON_CFLAGS)
-libprint_util_lib_a_LIBADD = $(JSON_LIBS)
-libprint_util_lib_a_CFLAGS = $(AM_CFLAGS)
+libprint_util_lib_la_CXXFLAGS = -I. -I$(USER_DIR) -I$(MTCR_DIR) -I$(MFT_EXT_LIBS_INC_DIR) -I$(UTILS_DIR) -I$(MLXREG_DIR) -I$(MTCR_INC_DIR) $(JSON_CFLAGS)
+libprint_util_lib_la_LIBADD = $(JSON_LIBS)
+libprint_util_lib_la_CFLAGS = $(AM_CFLAGS)

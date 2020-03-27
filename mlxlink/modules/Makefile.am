@@ -45,9 +45,9 @@ MLXLINK_MODULES_DIR = $(top_srcdir)/mlxlink
 AM_CFLAGS = -Wall -W -g -MP -MD -pipe -Werror $(COMPILER_FPIC) -DDATA_PATH=\"$(pkgdatadir)\"
 AM_CXXFLAGS = -Wall -W -g -MP -MD -pipe -Werror #$(COMPILER_FPIC)
 
-lib_LTLIBRARIES = libmodules_lib.a
+lib_LTLIBRARIES = libmodules_lib.la
 
-libmodules_lib_a_SOURCES = mlxlink_commander.h \
+libmodules_lib_la_SOURCES = mlxlink_commander.h \
                             mlxlink_commander.cpp \
                             mlxlink_user_input.h \
                             mlxlink_user_input.cpp \
@@ -60,6 +60,6 @@ libmodules_lib_a_SOURCES = mlxlink_commander.h \
                             mlxlink_ui.h \
                             mlxlink_ui.cpp
 
-libmodules_lib_a_LIBADD = printutil/libprint_util_lib.a $(JSON_LIBS)
-libmodules_lib_a_CFLAGS = $(AM_CFLAGS)
-libmodules_lib_a_CXXFLAGS = -I. -I$(USER_DIR) -I$(MTCR_DIR) -I$(MFT_EXT_LIBS_INC_DIR) -I$(UTILS_DIR) -I$(MLXREG_DIR) -I$(MLXLINK_MODULES_DIR) -I$(MTCR_INC_DIR) $(JSON_CFLAGS)
+libmodules_lib_la_LIBADD = printutil/libprint_util_lib.la $(JSON_LIBS)
+libmodules_lib_la_CFLAGS = $(AM_CFLAGS)
+libmodules_lib_la_CXXFLAGS = -I. -I$(USER_DIR) -I$(MTCR_DIR) -I$(MFT_EXT_LIBS_INC_DIR) -I$(UTILS_DIR) -I$(MLXREG_DIR) -I$(MLXLINK_MODULES_DIR) -I$(MTCR_INC_DIR) $(JSON_CFLAGS)

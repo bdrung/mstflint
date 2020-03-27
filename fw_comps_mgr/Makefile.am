@@ -56,7 +56,7 @@ noinst_LIBRARIES = libfw_comps_mgr.a
 libfw_comps_mgr_a_SOURCES =  fw_comps_mgr.cpp fw_comps_mgr.h fw_comps_mgr_dma_access.cpp fw_comps_mgr_dma_access.h fw_comps_mgr_direct_access.cpp fw_comps_mgr_direct_access.h fw_comps_mgr_abstract_access.cpp fw_comps_mgr_abstract_access.h
                   
 
-libfw_comps_mgr_a_LIBADD = ../reg_access/libreg_access.a $(MTCR_DIR)/libmtcr_ul.a $(LAYOUTS_LIB) $(TOOLS_RES_MGMT_DIR)/libtools_res_mgmt.a
+libfw_comps_mgr_a_LIBADD = ../reg_access/libreg_access.la $(MTCR_DIR)/libmtcr_ul.a $(LAYOUTS_LIB) $(TOOLS_RES_MGMT_DIR)/libtools_res_mgmt.a
 
 if ENABLE_INBAND
 libfw_comps_mgr_a_LIBADD +=  $(top_srcdir)/mad_ifc/libmad_ifc.a
